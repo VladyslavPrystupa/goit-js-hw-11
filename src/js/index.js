@@ -6,16 +6,19 @@ const form = document.querySelector('#search-form');
 const gallery = document.querySelector('.js-gallery');
 const moreBtn = document.querySelector('.js-load-more');
 let page = 1;
-moreBtn.hidden = true;
+let totalImg = 0;
 form.addEventListener('submit', onSubmit);
 
 async function onSubmit(evt) {
   evt.preventDefault();
   const value = form.elements.searchQuery.value;
   page = 1;
+  totalImg = 0;
+  moreBtn.hidden = false;
 
   const data = await fetchImg(value, page);
-  console.log();
+
+  totalImg += data.hits.length;
 
   if (data.hits.length === 0) {
     moreBtn.hidden = true;
@@ -23,8 +26,9 @@ async function onSubmit(evt) {
       'Sorry, there are no images matching your search query. Please try again.'
     );
   }
-  if (data.hits.length > 1) {
-    moreBtn.hidden = false;
+
+  if (totalImg === data.totalHits) {
+    moreBtn.hidden = true;
   }
 
   return (gallery.innerHTML = markup(data.hits));
@@ -34,9 +38,16 @@ moreBtn.addEventListener('click', loadMore);
 
 async function loadMore() {
   page += 1;
+
   const value = form.elements.searchQuery.value;
   const newPage = await fetchImg(value, page);
 
+  totalImg += newPage.hits.length;
+  console.log('totalImg: ', totalImg);
+  if (totalImg === newPage.totalHits) {
+    moreBtn.hidden = true;
+  }
+  console.log(newPage.totalHits);
   return gallery.insertAdjacentHTML('beforeend', markup(newPage.hits));
 }
 
