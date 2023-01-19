@@ -21,6 +21,23 @@ ul{
 img{
   display: block;
   width: 100%;
+  margin: 0 auto;
+
 }
 
+.gallery{
+    margin: 0 auto;
+      padding-right: 15px;
+      padding-left: 15px;
+      width: 1200px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+}
+
+.photo-card{
+  display: flex;
+  flex-direction: column;
+  width: 370px;
+}
 

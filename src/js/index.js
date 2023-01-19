@@ -1,3 +1,45 @@
+import Notiflix from 'notiflix';
+import { fetchImg } from './fetch';
+import { markup } from './markup';
+
+const form = document.querySelector('#search-form');
+const gallery = document.querySelector('.js-gallery');
+const moreBtn = document.querySelector('.js-load-more');
+let page = 1;
+moreBtn.hidden = true;
+form.addEventListener('submit', onSubmit);
+
+async function onSubmit(evt) {
+  evt.preventDefault();
+  const value = form.elements.searchQuery.value;
+  page = 1;
+
+  const data = await fetchImg(value, page);
+  console.log();
+
+  if (data.hits.length === 0) {
+    moreBtn.hidden = true;
+    Notiflix.Notify.failure(
+      'Sorry, there are no images matching your search query. Please try again.'
+    );
+  }
+  if (data.hits.length > 1) {
+    moreBtn.hidden = false;
+  }
+
+  return (gallery.innerHTML = markup(data.hits));
+}
+
+moreBtn.addEventListener('click', loadMore);
+
+async function loadMore() {
+  page += 1;
+  const value = form.elements.searchQuery.value;
+  const newPage = await fetchImg(value, page);
+
+  return gallery.insertAdjacentHTML('beforeend', markup(newPage.hits));
+}
+
 // import './css/styles.css';
 // import Notiflix from 'notiflix';
 // import { fetchCountries } from './fetchCountries';
