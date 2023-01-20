@@ -8,17 +8,21 @@
     <title>Homework 11</title>
   </head>
   <body>
-    <form class="search-form" id="search-form">
-      <input
-        type="text"
-        name="searchQuery"
-        autocomplete="off"
-        placeholder="Search images..."
-      />
-      <button type="submit">Search</button>
-    </form>
-    <div class="gallery js-gallery">
-      <!-- Картки зображень
+    <div class="wrapper wrapper__search">
+      <form class="search-form" id="search-form">
+        <input
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Search images..."
+          class="input"
+        />
+        <button class="btn" type="submit">Search</button>
+      </form>
+    </div>
+    <div class="wrapper">
+      <div class="gallery js-gallery">
+        <!-- Картки зображень
       <div class="photo-card">
         <img src="" alt="" loading="lazy" />
         <div class="info">
@@ -36,10 +40,13 @@
           </p>
         </div>
       </div> -->
+      </div>
     </div>
-    <button hidden type="button" class="load-more js-load-more">
-      Load more
-    </button>
+    <div class="wrapper">
+      <button hidden type="button" class="btn load-more js-load-more">
+        Load more
+      </button>
+    </div>
     <script src="./js/index.js" type="module"></script>
   </body>
 </html>
