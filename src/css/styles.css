@@ -7,9 +7,10 @@ body {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
+  background-color: #f4e6f7;
   color: #212121;
   line-height: 1.5;
+  
 }
 
 ul{
@@ -40,6 +41,7 @@ img{
   background-color: rgb(141, 49, 239);
   padding: 15px;
   margin-bottom: 30px;
+  border-radius: 15px;
 }
 
 .btn{
@@ -52,8 +54,8 @@ img{
 }
 
 .btn:hover{
-    color: #212121;
-    background-color: #fafafa;
+  color: #212121;
+  background-color: #fafafa;
 }
 
 .input{
@@ -77,6 +79,7 @@ img{
   border: 1px solid gray;
   border-radius: 10px;
   overflow: hidden;
+    background-color: lavender;
 }
 
 .info-item{
@@ -84,12 +87,11 @@ img{
 }
 
 .info{
-  font-size: 12px;
+  font-size: 10px;
   display: flex;
   justify-content: center;
   gap: 8px;
   padding: 10px;
-  background-color: lavender;
   
 
 }
