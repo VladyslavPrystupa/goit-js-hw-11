@@ -2,7 +2,7 @@ import Notiflix from 'notiflix';
 import { fetchImg } from './fetch';
 import { markup } from './markup';
 import { refs } from './refs';
-const axios = require('axios').default;
+
 let page = 1;
 let totalImg = 0; /*  для відсілдковування загальної к-сті картинок, щоб прибрати кнопку load more */
 
