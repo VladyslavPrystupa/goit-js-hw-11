@@ -10,7 +10,7 @@ export const markup = img => {
         comments,
         downloads,
       }) => `<div class="photo-card">
-        <img src="${webformatURL}" alt="${tags}" loading="lazy" height="240px"/>
+      <img src="${webformatURL}" alt="${tags}" loading="lazy" height="240"/>
         <div class="info">
           <p class="info-item">
             <b>Likes:</b> ${likes}

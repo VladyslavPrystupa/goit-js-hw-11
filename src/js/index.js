@@ -13,10 +13,10 @@ async function onSubmit(evt) {
   evt.preventDefault();
   const value = refs.form.elements.searchQuery.value;
   page = 1;
-  totalImg = 0; // для скидання загальної к-сті картинок при новому запиті(без перезавантаженн сторінки)
 
   const data = await fetchImg(value, page);
 
+  totalImg = 0; // для скидання загальної к-сті картинок при новому запиті(без перезавантаженн сторінки)
   totalImg += data.hits.length; // додаємо перші картинки на сторінці
 
   if (data.hits.length === 0) {
@@ -39,13 +39,13 @@ async function onSubmit(evt) {
 async function loadMore() {
   page += 1;
   const value = refs.form.elements.searchQuery.value;
-
   const newImg = await fetchImg(value, page);
 
   totalImg += newImg.hits.length; // додаємо до загальної к-сті нові дозавантажені картинки
 
   if (totalImg === newImg.totalHits) {
     refs.moreBtn.hidden = true;
+    Notiflix.Notify.info(`You have got all avaiable images.`);
   } // якшо на сторінці відображені всі можливі картнки
 
   return refs.gallery.insertAdjacentHTML('beforeend', markup(newImg.hits));
