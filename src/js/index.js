@@ -14,13 +14,20 @@ async function onSubmit(evt) {
   const value = refs.form.elements.searchQuery.value;
   page = 1;
 
-  const data = await fetchImg(value, page);
+  const data = await fetchImg(value, page).catch(err => {
+    console.log(err);
+    throw new Error(
+      Notiflix.Notify.failure(
+        'Sorry, there are no images matching your search query. Please try again.'
+      )
+    );
+  });
 
   totalImg = 0; // для скидання загальної к-сті картинок при новому запиті(без перезавантаженн сторінки)
   totalImg += data.hits.length; // додаємо перші картинки на сторінці
 
   if (value === '') {
-    return Notiflix.Notify.failure('Please enter a value.');
+    return Notiflix.Notify.failure('Please enter your search query.');
   }
 
   if (data.hits.length === 0) {
@@ -43,7 +50,14 @@ async function onSubmit(evt) {
 async function loadMore() {
   page += 1;
   const value = refs.form.elements.searchQuery.value;
-  const newImg = await fetchImg(value, page);
+  const newImg = await fetchImg(value, page).catch(err => {
+    console.log(err);
+    throw new Error(
+      Notiflix.Notify.failure(
+        'Sorry, there are no images matching your search query. Please try again.'
+      )
+    );
+  });
 
   totalImg += newImg.hits.length; // додаємо до загальної к-сті нові дозавантажені картинки
 
