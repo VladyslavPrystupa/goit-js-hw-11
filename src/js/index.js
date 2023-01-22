@@ -57,7 +57,8 @@
 //     } // якшо на сторінці відображені всі можливі картнки
 
 //     return refs.gallery.insertAdjacentHTML('beforeend', markup(newImg.hits));
-//   } catch (error) {
+// } catch (error) {
+// console.log(error);
 //     throw new Error(
 //       Notiflix.Notify.failure(
 //         'Sorry, there are no images matching your search query. Please try again.'
@@ -108,7 +109,7 @@ function onSubmit(evt) {
       return (refs.gallery.innerHTML = markup(data.hits));
     })
     .catch(err => {
-      error();
+      error(err);
     });
 }
 
@@ -128,7 +129,7 @@ function loadMore() {
       return refs.gallery.insertAdjacentHTML('beforeend', markup(data.hits));
     })
     .catch(err => {
-      error();
+      error(err);
     });
 }
 
@@ -140,7 +141,8 @@ function showBtn() {
   refs.moreBtn.hidden = false;
 }
 
-function error() {
+function error(err) {
+  console.log(err);
   throw new Error(
     Notiflix.Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
