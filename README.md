@@ -1,99 +1,150 @@
-# Parcel template
+# Goose-Track Project
 
-Этот проект был создан при помощи Parcel. Для знакомства и настройки
-дополнительных возможностей [обратись к документации](https://parceljs.org/).
+---
 
-## Подготовка нового проекта
+Welcome to the Task Planner App! This application is designed to help you
+organize your tasks and manage your daily workflow efficiently. With this app,
+you can register, log in, create tasks, categorize them, set deadlines, track
+their importance, view tasks on a monthly calendar, update your personal
+information, add avatars, provide feedback, and customize language and theme
+settings.
 
-1. Убедись что на компьютере установлена LTS-версия Node.js.
-   [Скачай и установи](https://nodejs.org/en/) её если необходимо.
-2. Склонируй этот репозиторий.
-3. Измени имя папки с `parcel-project-template` на имя своего проекта.
-4. Создай новый пустой репозиторий на GitHub.
-5. Открой проект в VSCode, запусти терминал и свяжи проект с GitHub-репозиторием
-   [по инструкции](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#changing-a-remote-repositorys-url).
-6. Установи зависимости проекта в терминале командой `npm install` .
-7. Запусти режим разработки, выполнив команду `npm start`.
-8. Перейди в браузере по адресу [http://localhost:1234](http://localhost:1234).
-   Эта страница будет автоматически перезагружаться после сохранения изменений в
-   файлах проекта.
+### Installation
 
-## Файлы и папки
+To set up the Task Planner App locally, follow these steps:
 
-- Все паршалы файлов стилей должны лежать в папке `src/sass` и импортироваться в
-  файлы стилей страниц. Например, для `index.html` файл стилей называется
-  `index.scss`.
-- Изображения добавляй в папку `src/images`. Сборщик оптимизирует их, но только
-  при деплое продакшн версии проекта. Все это происходит в облаке, чтобы не
-  нагружать твой компьютер, так как на слабых машинах это может занять много
-  времени.
+Clone the repository: git clone https://github.com/your-repository.git Navigate
+to the project directory: cd task-planner-app Install the dependencies: npm
+install Start the development server: npm start Open your browser and visit
+http://localhost:3000 to access the Task Planner App.
 
-## Деплой
+### Usage
 
-Для настройки деплоя проекта необходимо выполнить несколько дополнительных шагов
-по настройке твоего репозитория. Зайди во вкладку `Settings` и в подсекции
-`Actions` выбери выбери пункт `General`.
+Users can utilize our website without instalatio, to effectively manage their
+tasks and enhance their productivity at the following link:
+https://malakhow-alexandr.github.io/Team-Project-Organaizer-Goose-Track/
 
-![GitHub actions settings](./assets/actions-config-step-1.png)
+1. Registration:
 
-Пролистай страницу до последней секции, в которой убедись что выбраны опции как
-на следующем изображении и нажми `Save`. Без этих настроек у сборки будет
-недостаточно прав для автоматизации процесса деплоя.
+- Visit the website and click on the registration button.
+- Provide the required information, such as name, email, and password.
+- Optionally, users can choose to register using their Google accounts for
+  convenience.
+- After successful registration, users gain access to the full functionalityof
+  the website.
 
-![GitHub actions settings](./assets/actions-config-step-2.png)
+2. Log in:
 
-Продакшн версия проекта будет автоматически собираться и деплоиться на GitHub
-Pages, в ветку `gh-pages`, каждый раз когда обновляется ветка `main`. Например,
-после прямого пуша или принятого пул-реквеста. Для этого необходимо в файле
-`package.json` отредактировать поле `homepage` и скрипт `build`, заменив
-`your_username` и `your_repo_name` на свои, и отправить изменения на GitHub.
+- On the website's homepage, click on the login button.
+- Enter the registered email and password, or choose the Google account login
+  option.
+- Upon successful login, users are redirected to their personalized dashboard.
 
-```json
-"homepage": "https://your_username.github.io/your_repo_name/",
-"scripts": {
-  "build": "parcel build src/*.html --public-url /your_repo_name/"
-},
-```
+3. Task Management:
 
-Далее необходимо зайти в настройки GitHub-репозитория (`Settings` > `Pages`) и
-выставить раздачу продакшн версии файлов из папки `/root` ветки `gh-pages`, если
-это небыло сделано автоматически.
+- On the dashboard, users can see their existing tasks organized into categories
+  (To Do, In Progress, Done).
+- To add a new task, users can click on the "Add Task" button.
+- Provide task details such as title, description, category, deadline, and
+  importance level.
+- Click the "Save" button to add the task to the corresponding category.
 
-![GitHub Pages settings](./assets/repo-settings.png)
+4. Task Categorization and Movement:
 
-### Статус деплоя
+- Existing tasks can be moved between categories and edit it.
+- Users can drag and drop tasks to the desired category or use the provided
+  buttons/icons for task movement.
+- This allows users to keep track of task progress and ensure effective task
+  management.
 
-Статус деплоя крайнего коммита отображается иконкой возле его идентификатора.
+5. Task Calendar:
 
-- **Желтый цвет** - выполняется сборка и деплой проекта.
-- **Зеленый цвет** - деплой завершился успешно.
-- **Красный цвет** - во время линтинга, сборки или деплоя произошла ошибка.
+- Users can navigate to the calendar page to view their tasks visually on a
+  monthly calendar.
+- Dates with assigned tasks are highlighted, and users can click on a specific
+  date to view or add tasks.
+- The calendar provides an overview of task distribution, allowing users to plan
+  their schedule efficiently.
 
-Более детальную информацию о статусе можно посмотреть кликнув по иконке, и в
-выпадающем окне перейти по ссылке `Details`.
+6. Task Statistics:
 
-![Deployment status](./assets/status.png)
+- Users can access the task statistics page to gain insights into their task
+  management and productivity.
+- Statistics may include completion rates, task categories, and importance
+  levels. These statistics help users evaluate their progress and make
+  data-driven decisions.
 
-### Живая страница
+7. Profile and Avatar:
 
-Через какое-то время, обычно пару минут, живую страницу можно будет посмотреть
-по адресу указанному в отредактированном свойстве `homepage`. Например, вот
-ссылка на живую версию для этого репозитория
-[https://goitacademy.github.io/parcel-project-template](https://goitacademy.github.io/parcel-project-template).
+- Users can personalize their profile by accessing the profile settings.
+- Within the profile settings, users can update their personal information.
+  Users can also upload an avatar image to further customize their profile
 
-Если открывается пустая страница, убедись что во вкладке `Console` нет ошибок
-связанных с неправильными путями к CSS и JS файлам проекта (**404**). Скорее
-всего у тебя неправильное значение свойства `homepage` или скрипта `build` в
-файле `package.json`.
+8. Feedback:
 
-## Как это работает
+- Users have the option to provide feedback on the website. They can navigate to
+  the feedback section and fill out a form with their comments, suggestions, or
+  issues.
+- This feedback helps the development team to improve the website and enhance
+  the user experience.
 
-![How it works](./assets/how-it-works.png)
+9. Language and Theme Customization:
 
-1. После каждого пуша в ветку `main` GitHub-репозитория, запускается специальный
-   скрипт (GitHub Action) из файла `.github/workflows/deploy.yml`.
-2. Все файлы репозитория копируются на сервер, где проект инициализируется и
-   проходит сборку перед деплоем.
-3. Если все шаги прошли успешно, собранная продакшн версия файлов проекта
-   отправляется в ветку `gh-pages`. В противном случае, в логе выполнения
-   скрипта будет указано в чем проблема.
+- Users can change the language setting of the website between Ukrainian and
+  English.
+- Additionally, users can choose their preferred theme, either a dark or cater
+  to individual user preferences and enhance usability.
+
+* By following these light mode, for a personalized visual experience. These
+  customization options steps, users can effectively use our website, the Task
+  Planner App, to manage their tasks, track their progress, and optimize their
+  productivity.
+
+### Features
+
+- User Registration: To access the app's full functionality, users need to
+  register an account. Without registration, users can only view the app's
+  layout page with a brief description and feedback from other users. Google
+
+- Account Integration: Users have the option to log in using their Google
+  accounts for a seamless authentication experience.
+
+* Task Management: Once logged in, users can create tasks, assign them to
+  categories (To Do, In Progress, Done), set deadlines, and track their
+  importance (Low, Medium, High). This allows users to effectively manage and
+  prioritize their tasks.
+
+- Task Tracking on Calendar: The app provides a monthly calendar view where
+  users can see their tasks distributed across different dates. Users can click
+  on a date to add tasks or view existing ones.
+
+* Task Statistics: Users can view statistics related to their tasks, including
+  completion rates, task categories, and importance levels. This feature
+  provides insights into task management and productivity.
+* Language and Theme Customization: Users can change the app's language between
+  Ukrainian and English. Additionally, users can choose between a dark or light
+  theme for a personalized visual experience.
+
+### Stack's used:
+
+[![React](https://img.shields.io/static/v1?label=&message=React&color=2ea44f)](https://)
+[![Redux](https://img.shields.io/static/v1?label=&message=Redux&color=2ea44f)](https://)
+[![Axios](https://img.shields.io/static/v1?label=&message=Axios&color=2ea44f)](https://)
+[![Node.js](https://img.shields.io/static/v1?label=&message=Node.js&color=2ea44f)](https://)
+[![HTML](https://img.shields.io/static/v1?label=&message=HTML&color=2ea44f)](https://)
+[![CSS - SASS](https://img.shields.io/static/v1?label=CSS&message=SASS&color=2ea44f)](https://)
+[![Figma](https://img.shields.io/static/v1?label=&message=Figma&color=2ea44f)](https://)
+[![Git](https://img.shields.io/static/v1?label=&message=Git&color=2ea44f)](https://)
+[![GitHub](https://img.shields.io/static/v1?label=&message=GitHub&color=2ea44f)](https://)
+[![VS Code](https://img.shields.io/static/v1?label=&message=VS+Code&color=2ea44f)](https://)
+
+### Frameworks:
+
+[![Jest](https://img.shields.io/static/v1?label=&message=Jest&color=orange)](https://)
+[![mongoose](https://img.shields.io/static/v1?label=&message=mongoose&color=orange)](https://)
+[![swagger](https://img.shields.io/static/v1?label=&message=swagger&color=orange)](https://)
+[![style-Components](https://img.shields.io/static/v1?label=&message=style-Components&color=orange)](https://)
+[![modern-normalize](https://img.shields.io/static/v1?label=&message=modern-normolize&color=orange)](https://)
+[![moment](https://img.shields.io/static/v1?label=&message=moment&color=orange)](https://)
+[![redux-persist](https://img.shields.io/static/v1?label=&message=redux-persist&color=orange)](https://)
+[![and other's](https://img.shields.io/static/v1?label=&message=and+other's&color=orange)](https://)
